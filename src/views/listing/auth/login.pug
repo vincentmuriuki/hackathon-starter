@@ -1,1 +1,34 @@
 extends ../layout
+block register_form
+    .container
+        .py-5.text-center
+            // <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+            br
+            br
+            br
+            br
+            br
+            br
+            p.lead User Login
+        .row
+            .col-md-4.order-md-2.mb-4
+            .col-md-8.order-md-1
+                //- h4.mb-3 Billing address
+                form.needs-validation(novalidate='' action='/login' method='post')
+                    .row
+                        .col-md-6.mb-3
+                            label(for='email') Email
+                            input(type='hidden', name='_csrf', value=_csrf)
+                            input#email.form-control(type='text', name='email' placeholder='', value='', required='')
+                            .invalid-feedback
+                                | Valid first name is required.
+
+                    .mb-3
+                        label(for='zip') Password
+                        input#password.form-control(type='password', name='password' placeholder='password', required='')
+                        .invalid-feedback
+                            | Password is required.
+
+                        hr.mb-4
+                        button.btn.btn-primary.btn-lg.btn-block(type='submit') Login
+                // Footer
