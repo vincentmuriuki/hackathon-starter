@@ -1,0 +1,113 @@
+extends ../layout
+block register_form
+    .container
+        .py-5.text-center
+            // <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+            br
+            br
+            br
+            br
+            br
+            br
+            p.lead User Registration
+        .row
+            .col-md-4.order-md-2.mb-4
+            .col-md-8.order-md-1
+                h4.mb-3 Billing address
+                form.needs-validation(novalidate='' action='/signup' method='post')
+                    .row
+                        .col-md-6.mb-3
+                            label(for='firstName') First name
+                            input(type='hidden', name='_csrf', value=_csrf)
+                            input#firstName.form-control(type='text', name='firstName' placeholder='', value='', required='')
+                            .invalid-feedback
+                                | Valid first name is required.
+                        .col-md-6.mb-3
+                            label(for='lastName') Last name
+                            input#lastName.form-control(type='text', name='lastName' placeholder='', value='', required='')
+                            .invalid-feedback
+                                | Valid last name is required.
+                    .mb-3
+                        label(for='username') Username
+                        .input-group
+                            .input-group-prepend
+                            span.input-group-text @
+                            input#username.form-control(type='text', name='username' placeholder='Username', required='')
+                            .invalid-feedback(style='width: 100%;')
+                                | Your username is required.
+                    .mb-3
+                        label(for='email')
+                            | Email 
+                            span.text-muted 
+                        input#email.form-control(type='email', name='email' placeholder='you@example.com' required='')
+                        .invalid-feedback
+                            | Please enter a valid email address.
+                    .mb-3
+                        label(for='email')
+                            | Phone 
+                            span.text-muted 
+                        input#phone.form-control(type='text', name='phone' placeholder='07 000 000 00')
+                        .invalid-feedback
+                            | Please enter a valid phone.
+                    .mb-3
+                        label(for='address') Address
+                        input#address.form-control(type='text', name='address' placeholder='1234 Main St', required='')
+                        .invalid-feedback
+                            | Please enter your address.
+                    //- .mb-3
+                    //-     label(for='address2')
+                    //-             | Address 2 
+                    //-         span.text-muted (Optional)
+                    //-     input#address2.form-control(type='text', placeholder='Apartment or suite')
+                    //.row
+                    .mb-3
+                        label(for='country') County
+                        select#county.custom-select.d-block.w-100(required='' name='county')
+                            option(value='') Choose...
+                            option Nairobi
+                        .invalid-feedback
+                            | Please select a valid county.
+                        //- .col-md-4.mb-3
+                        //-     label(for='state') State
+                        //-     select#state.custom-select.d-block.w-100(required='')
+                        //-     option(value='') Choose...
+                        //-     option California
+                        //-     .invalid-feedback
+                        //-         | Please provide a valid state.
+                    label Type of User
+                    .col-sm-6
+                        .form-check.form-check-inline
+                            input(type='radio', class='form-check-input'  name='userType', value='user', data-toggle='radio')
+                            label.form-check-label User
+
+                        .form-check.form-check-inline
+                            input(type='radio', class='form-check-input' , name='userType', value='enlister', data-toggle='radio')
+                            label.form-check-label Enlister
+
+                        .form-check.form-check-inline
+                            input(type='radio', class='form-check-input' , name='userType', value='sponsor', data-toggle='radio')
+                            label.form-check-label Sponsor
+
+                    .mb-3
+                        label(for='zip') Password
+                        input#password.form-control(type='password', name='password' placeholder='password', required='')
+                        .invalid-feedback
+                            | Password is required.
+                    .mb-3
+                        label(for='zip') Confirm Password
+                        input#confirmPassword.form-control(type='password', name='confirmPassword' placeholder='Confirm password', required='')
+                        .invalid-feedback
+                            | Confirm Password is required.
+
+                        hr.mb-4
+                        button.btn.btn-primary.btn-lg.btn-block(type='submit') Submit
+                //- footer.my-5.pt-5.text-muted.text-center.text-small
+                //-     p.mb-1 © 2017-2018 Company Name
+                //-     ul.list-inline
+                //-         li.list-inline-item
+                //-             a(href='#') Privacy
+                //-         li.list-inline-item
+                //-             a(href='#') Terms
+                //-         li.list-inline-item
+                //-         a(href='#') Support
+                // Footer

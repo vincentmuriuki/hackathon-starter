@@ -29,15 +29,15 @@ dotenv.config({ path: '.env.example' });
 /**
  * Controllers (route handlers).
  */
-const homeController = require('./controllers/home');
-const userController = require('./controllers/user');
-const apiController = require('./controllers/api');
-const contactController = require('./controllers/contact');
+const homeController = require('./src/controllers/home');
+const userController = require('./src/controllers/user');
+const apiController = require('./src/controllers/api');
+const contactController = require('./src/controllers/contact');
 
 /**
  * API keys and Passport configuration.
  */
-const passportConfig = require('./config/passport');
+const passportConfig = require('./src/config/passport');
 
 /**
  * Create Express server.
@@ -63,13 +63,13 @@ mongoose.connection.on('error', (err) => {
  */
 app.set('host', process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0');
 app.set('port', process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080);
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'src/views'));
 app.set('view engine', 'pug');
 app.use(expressStatusMonitor());
 app.use(compression());
 app.use(sass({
-  src: path.join(__dirname, 'public'),
-  dest: path.join(__dirname, 'public')
+  src: path.join(__dirname, 'src/public'),
+  dest: path.join(__dirname, 'src/public')
 }));
 app.use(logger('dev'));
 app.use(bodyParser.json());

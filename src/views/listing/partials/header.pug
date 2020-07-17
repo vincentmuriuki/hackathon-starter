@@ -1,0 +1,77 @@
+header.header
+        .container
+          .row
+            .col
+              .header_content.d-flex.flex-row.align-items-center.justify-content-start
+                .logo
+                  a(href='#')
+                    img(src='https://dl.dropbox.com/s/6lavoz81jevedrn/logo.png?dl=0', alt='')
+                nav.main_nav
+                  ul
+                    li.active
+                      a(href='/') Home
+                    li
+                      a(href='#properties') Properties
+                    //- li
+                    //-   a(href='contact.html') Contact
+                    if !user
+                      li
+                        a(href='/login') Login
+                      li
+                        a(href='/signup') Signup
+                    else
+                      li.nav-item.dropdown
+                        a#navbarDropdownMenuLink.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                          | Account
+                        .dropdown-menu(aria-labelledby='navbarDropdownMenuLink')
+                          a.dropdown-item(style='color: black' href='/account')
+                            | Profile
+                          a.dropdown-item(style='color: black' href='/account') 
+                            | Settings
+                          a.dropdown-item(style='color: black' href='/logout') 
+                            | Logout
+                      //- li
+                      //-   a(href='contact.html') Logout
+                      //-   .dropdown-menu.dropdown-menu-right.shadow.animated--grow-in(aria-labelledby='userDropdown')
+                      //-     a.dropdown-item(href='/account')
+                      //-       i.fas.fa-user.fa-sm.fa-fw.mr-2.text-gray-400
+                      //-       |                   Profile
+                      //-     a.dropdown-item(href='/account')
+                      //-       i.fas.fa-cogs.fa-sm.fa-fw.mr-2.text-gray-400
+                      //-       |                   Settings
+                      //-     a.dropdown-item(href='/logout')
+                      //-       i.fas.fa-sign-out-alt.fa-sm.fa-fw.mr-2.text-gray-400
+                      //-       |                    Logout
+                      //- div.dropdown-menu
+                      //-   a.dropdown-item(href='/account') My Account
+                      //-   div.dropdown-divider
+                      //-   a.dropdown-item(href='/logout') Logout
+
+                .phone_num.ml-auto
+                  .phone_num_inner
+                    img(src='images/phone.png', alt='')
+                    span 652-345 3222 11
+                .hamburger.ml-auto
+                  i.fa.fa-bars(aria-hidden='true')
+
+
+
+
+        //-           if !user
+        //-   li.nav-item(class=(title === 'Login') ? 'active' : undefined)
+        //-     a.nav-link(href='/login') Login
+        //-   li.nav-item(class=(title === 'Create Account') ? 'active' : undefined)
+        //-     a.nav-link(href='/signup') Create Account
+        //- else
+        //-   li.dropdown(class=(title === 'Account Management') ? 'active' : undefined).nav-item
+        //-     a.dropdown-toggle.nav-link(href='#', data-toggle='dropdown')
+        //-       if user.profile.picture
+        //-         img(src=user.profile.picture)
+        //-       else
+        //-         img(src=user.gravatar(60))
+        //-       span= user.profile.name || user.email || user.id
+        //-       i.caret
+        //-     div.dropdown-menu
+        //-       a.dropdown-item(href='/account') My Account
+        //-       div.dropdown-divider
+        //-       a.dropdown-item(href='/logout') Logout

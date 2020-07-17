@@ -1,0 +1,25 @@
+doctype html
+html(lang='en')
+  include partials/head
+    block additional_styles
+  body
+    .super_container
+      // Header
+      include partials/header
+      // Menu
+      block menu
+      // Home slider
+      block slider
+      // Home Search
+      block profile
+      block register_form
+      block search
+      // Recent
+      block recent_properties
+      // Testimonials
+      block testimonials
+      // Newsletter
+      include partials/newsletter
+      // Footer
+      include partials/footer
+    include partials/scripts
