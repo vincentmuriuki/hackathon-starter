@@ -19,16 +19,17 @@ block register_form
                         .col-md-6.mb-3
                             label(for='email') Email
                             input(type='hidden', name='_csrf', value=_csrf)
-                            input#email.form-control(type='text', name='email' placeholder='', value='', required='')
+                            input#email.form-control(type='text', name='email'  value='', required='', placeholder='Your email')
                             .invalid-feedback
                                 | Valid first name is required.
 
-                    .mb-3
-                        label(for='zip') Password
-                        input#password.form-control(type='password', name='password' placeholder='password', required='')
-                        .invalid-feedback
-                            | Password is required.
+                    .row
+                        .col-md-6.mb-3
+                            label(for='zip') Password
+                            input#password.form-control(type='password', name='password' placeholder='Your password', required='')
+                            .invalid-feedback
+                                | Password is required.
 
-                        hr.mb-4
-                        button.btn.btn-primary.btn-lg.btn-block(type='submit') Login
+                            hr.mb-4
+                            button.btn.btn-primary.btn-lg.btn-block(type='submit') Login
                 // Footer
