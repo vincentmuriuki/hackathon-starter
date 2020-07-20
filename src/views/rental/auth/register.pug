@@ -1,0 +1,40 @@
+extends ../layout
+block sub_hero
+    .hero.inner-page(style="background-image: url('https://dl.dropbox.com/s/5iv98hjcc4qdfzq/hero_1_a.jpg?dl=0');")
+        .container
+            .row.align-items-end
+                .col-lg-5
+                    .intro
+                    h1
+                        strong Register
+                    .custom-breadcrumbs
+                        a(href='/') Home
+                        span.mx-2 /
+                        strong Register
+
+block content
+    .site-section.bg-light
+        .container
+            .row.mb-3.ml-auto
+                .col-lg-7
+                    h2.section-heading
+                        strong Register
+            .col-lg-5.col-md-6
+                form
+                    input(type='hidden', name='_csrf', value=_csrf)
+                    .form-group
+                        label(for='exampleInputEmail1') Email address
+                        input#exampleInputEmail1.form-control(type='email', aria-describedby='emailHelp', placeholder='Email')
+                    .form-group
+                        label(for='exampleInputPassword1') Username
+                        input#username.form-control(type='text', name='username', placeholder='Username')
+                    .form-group
+                        label(for='exampleInputPassword1') Password
+                        input#password.form-control(type='password', name='password' placeholder='Password')
+                    .form-group
+                        label(for='confirmPassword') Confirm Password
+                        input#confirmPassword.form-control(type='password', name='confirmPassword', placeholder='Password')
+                button.btn.btn-primary(type='submit') Register Now
+                p.mt-3
+                    | Already a member? 
+                    a(href='/login') Login

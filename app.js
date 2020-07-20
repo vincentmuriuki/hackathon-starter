@@ -33,6 +33,7 @@ const homeController = require('./src/controllers/home');
 const userController = require('./src/controllers/user');
 const apiController = require('./src/controllers/api');
 const contactController = require('./src/controllers/contact');
+const userListingController = require('./src/controllers/userListing');
 
 /**
  * API keys and Passport configuration.
@@ -126,6 +127,7 @@ app.use('/webfonts', express.static(path.join(__dirname, 'node_modules/@fortawes
 /**
  * Primary app routes.
  */
+
 app.get('/', homeController.index);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
@@ -146,6 +148,10 @@ app.post('/account/password', passportConfig.isAuthenticated, userController.pos
 app.post('/account/delete', passportConfig.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
 
+/**
+ * Listings
+ */
+app.get('/add/listing', passportConfig.isAuthenticated, userListingController.getListingPage);
 /**
  * API examples routes.
  */

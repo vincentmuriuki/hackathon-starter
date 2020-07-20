@@ -1,0 +1,39 @@
+extends ../layout
+block sub_hero
+    .hero.inner-page(style="background-image: url('https://dl.dropbox.com/s/5iv98hjcc4qdfzq/hero_1_a.jpg?dl=0');")
+        .container
+            .row.align-items-end
+                .col-lg-5
+                    .intro
+                    h1
+                        strong Login
+                    .custom-breadcrumbs
+                        a(href='/') Home
+                        span.mx-2 /
+                        strong Login
+
+block content
+    .site-section.bg-light
+        .container
+            .row.ml-auto.mb-3
+                .col-lg-7
+                    h2.section-heading
+                        strong Welcome back
+            .col-lg-5.col-md-6
+                form
+                    input(type='hidden', name='_csrf', value=_csrf)
+                    .form-group
+                        label(for='exampleInputEmail1') Email address
+                        input#exampleInputEmail1.form-control(type='email', aria-describedby='emailHelp', placeholder='Email')
+                    .form-group
+                        label(for='password') Password
+                        input#password.form-control(type='password', name='password' placeholder='Password')
+                    .form-check.mb-3
+                        input#check.form-check-input(type='checkbox')
+                        label.form-check-label(for='check') Remember me
+                    button.btn.btn-primary(type='submit') Login
+                    p.mt-3
+                        | Don't have an account? 
+                        a(href='/signup') Register
+
+                    

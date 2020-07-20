@@ -1,0 +1,57 @@
+extends ./layout
+block sub_hero
+    .hero.inner-page(style="background-image: url('images/hero_1_a.jpg');")
+        .container
+            .row.align-items-end
+                .col-lg-5
+                    .intro
+                    h1
+                        strong Listings
+                    .custom-breadcrumbs
+                        a(href='index.html') Home
+                        span.mx-2 /
+                        strong Listings
+
+block content
+    .site-section.bg-light
+        .container
+            .row.ml-auto.mb-3
+                .col-lg-7
+                    h2.section-heading
+                        strong Add a car listing
+            .col-lg-8.col-md-6.float-center
+
+            if req.user.paymentProfile.oneTimePaymentStatus === 1
+                form
+                    .form-row
+                        .form-group.col-md-6
+                            label(for='residence') Residence
+                            input#residence.form-control(type='email', name='residence' placeholder='e.g. Kileleshwa')
+                        .form-group.col-md-6
+                            label(for='typeOfVehicle') Type of Vehicle
+                            select#typeOfVehicle.form-control(name='typeOfVehicle')
+                                option(selected='') Choose...
+                                option Cars
+                                option Lorries
+                                option Vans
+                                option Pickuptrucks
+                    .form-group
+                        label(for='make') Make
+                        input#make.form-control(type='text', name='make' placeholder='e.g. Nissan')
+                    .form-group
+                        label(for='inputAddress2') Model
+                        input#inputAddress2.form-control(type='text', placeholder='e.g. Xtrail')
+                    .form-row
+                        .form-group.col-md-6
+                            label(for='plateNumber') Plate number
+                            input#plateNumber.form-control(type='text', name='plateNumber' placeholder='Plate Number')
+                        .form-group.col-md-6
+                            label(for='alternativePhoneNumber') Alternative mobile number
+                            input#alternativePhoneNumber.form-control(type='text', name='alternativePhoneNumber' placeholder='+254...')
+                    .form-row
+                        small Upload a clear image of your vehicle.
+                        input#image.form-control(type='file' name='image')
+                button.btn.btn-primary.mt-3(type='submit') Add Listing
+            else
+                a#userDropdown.nav-link.dropdown-toggle(href='#')
+                    | Kindly pay a one time fee of Ksh. 100 to continue

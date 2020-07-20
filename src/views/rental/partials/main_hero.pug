@@ -1,0 +1,28 @@
+.hero(style="background-image: url('https://dl.dropbox.com/s/5iv98hjcc4qdfzq/hero_1_a.jpg?dl=0');")
+        .container
+          .row.align-items-center.justify-content-center
+            .col-lg-10
+              .row.mb-5
+                .col-lg-7.intro
+                  h1
+                    strong Rent a car
+                    |  is within your finger tips.
+              form.trip-form
+                .row.align-items-center
+                  .mb-3.mb-md-0.col-md-3
+                    select.custom-select.form-control(name='', id='')
+                      option(value='') Select Type
+                      option(value='') Ferrari
+                      option(value='') Toyota
+                      option(value='') Ford
+                      option(value='') Lamborghini
+                  .mb-3.mb-md-0.col-md-3
+                    .form-control-wrap
+                      input#cf-3.form-control.datepicker.px-3(type='text', placeholder='Pick up')
+                      span.icon.icon-date_range
+                  .mb-3.mb-md-0.col-md-3
+                    .form-control-wrap
+                      input#cf-4.form-control.datepicker.px-3(type='text', placeholder='Drop off')
+                      span.icon.icon-date_range
+                  .mb-3.mb-md-0.col-md-3
+                    input.btn.btn-primary.btn-block.py-3(type='submit', value='Search Now')

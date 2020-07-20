@@ -17,7 +17,7 @@ exports.getLogin = (req, res) => {
   if (req.user) {
     return res.redirect('/');
   }
-  res.render('listing/auth/login', {
+  res.render('rental/auth/login', {
     title: 'Login'
   });
 };
@@ -72,7 +72,7 @@ exports.getSignup = (req, res) => {
   if (req.user) {
     return res.redirect('/');
   }
-  res.render('listing/auth/register', {
+  res.render('rental/auth/register', {
     title: 'Create Account'
   });
 };

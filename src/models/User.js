@@ -30,6 +30,14 @@ const userSchema = new mongoose.Schema({
   quickbooks: String,
   tokens: Array,
 
+  paymentProfile: {
+    oneTimePaymentStatus: {
+      type: Boolean,
+      default: 0
+    },
+    amountPaid: String
+  },
+
   profile: {
     name: String,
     gender: String,

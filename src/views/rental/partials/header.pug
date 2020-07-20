@@ -1,0 +1,39 @@
+header.site-navbar.site-navbar-target(role='banner')
+        .container
+          .row.align-items-center.position-relative
+            .col-3
+              .site-logo
+                a(href='index.html')
+                  strong CarRental
+            .col-9.text-right
+              span.d-inline-block.d-lg-none
+                a.site-menu-toggle.js-menu-toggle.py-5(href='#')
+                  span.icon-menu.h3.text-black
+              nav.site-navigation.text-right.ml-auto.d-none.d-lg-block(role='navigation')
+                ul.site-menu.main-menu.js-clone-nav.ml-auto
+                  li.active
+                    a.nav-link(href='index.html') Home
+                  li
+                    a.nav-link(href='listing.html') Listing
+                  li
+                    a.nav-link(href='testimonials.html') Testimonials
+                  li
+                    a.nav-link(href='blog.html') Blog
+                  li
+                    a.nav-link(href='about.html') About
+                  li.no-arrow
+                    a#userDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') List
+                    .dropdown-menu.dropdown-menu-right.shadow.animated--grow-in(aria-labelledby='userDropdown')
+                      a.dropdown-item(href='#')
+                        i.fas.fa-user.fa-sm.fa-fw.mr-2.text-gray-400
+                        |                   Profile
+                      a.dropdown-item(href='#')
+                        i.fas.fa-cogs.fa-sm.fa-fw.mr-2.text-gray-400
+                        |                   Settings
+                      a.dropdown-item(href='#')
+                        i.fas.fa-list.fa-sm.fa-fw.mr-2.text-gray-400
+                        |                   Activity Log
+                      .dropdown-divider
+                      a.dropdown-item(href='#', data-toggle='modal', data-target='#logoutModal')
+                        i.fas.fa-sign-out-alt.fa-sm.fa-fw.mr-2.text-gray-400
+                          |                   Logout
